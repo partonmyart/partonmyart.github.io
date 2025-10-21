@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Art Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body oncontextmenu="return false;">
+  <!-- HEADER -->
+  <header style="text-align:center; margin-top:20px;">
+    <img src="images/header-logo.png" alt="Art Page Logo" id="site-logo">
+    <img src="images/tagline.png" alt="Tagline" id="tagline-image">
+    <h1>Artist & Illustrator</h1>
+
+    <!-- SOCIAL ICONS -->
+    <section id="Socials" style="text-align: center; margin-top: 20px;">
+      <a href="https://www.tiktok.com/@parton_my_art" target="_blank">
+        <img src="images/tiktok-icon.png" alt="TikTok" style="width:32px; height:32px; margin:0 10px;">
+      </a>
+      <a href="https://www.instagram.com/parton_my_art" target="_blank">
+        <img src="images/instagram-icon.png" alt="Instagram" style="width:32px; height:32px; margin:0 10px;">
+      </a>
+    </section>
+
+    <!-- NAVIGATION -->
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#commissions">Commissions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>Welcome to Parton_My_Art!</h2>
+    <p>I specialize in custom illustrations, book-inspired art, and everything in between.</p>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="gallery">
+      <img src="images/Jellyfish_Artwork1-thumb.jpg" alt="Jellyfish Artwork" data-full="images/Jellyfish_Artwork1-Large.jpg">
+      <img src="images/Helen_Artwork2-thumb.jpg" alt="Helen Artwork" data-full="images/Helen_Artwork2-Large.jpg">
+      <img src="images/dmatmoobil_Artwork3-thumb.jpg" alt="dmatmoobil Artwork" data-full="images/dmatmoobil_Artwork3-Large.jpg">
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img id="lightbox-img" src="" alt="Full artwork">
+    </div>
+  </section>
+
+  <!-- COMMISSIONS -->
+  <section id="commissions">
+    <h2>Commissions</h2>
+    <p>I’m currently open for commissions! Here’s what you should know 👇</p>
+    <ul>
+      <li>Digital portraits, book illustrations, fantasy art, or fanart</li>
+      <li>Starting at $35/hr. This will vary dependent upon detail, type of media, and other custom requests. </li>
+      <li> 50% deposit must be cleared before project begins. 100% down for large projects.</li>
+    </ul>
+    <ul>
+        <li>Payment via PayPal Goods & Services only</li>
+      <li>This keeps the dark arts of fraud at bay...</li>
+      <li>I want you to know you are safe to order from me. (Invoices included with completed work/payment)</li>
+      <li>Basic sketch will be provided for approval. </li>
+    </ul>
+      <p>I'm only one person, so endless revisions make me cry in layers. Let's keep communication clear and caffeinated.</p>
+  </section>
+
+    <!-- GOOGLE FORM -->
+    <section id="commission-form">
+      <h2>Request a Commission</h2>
+      <p>Ready to make something awesome together? Click below - I promise it's less intimidating than it looks.</p>
+  <div id="guidelines" style="text-align: center; margin-bottom: 20px;">
+    <p><strong>I created guidelines for allllll the questions. Think Paperwork, but make it art.</strong></p>
+    <a href="docs/General_Client_Guidelines.pdf" target="_blank" class="button">General Client Guidelines</a>
+    <a href="docs/Author_Guidelines.pdf" target="_blank" class="button">Author Guidelines</a>
+  </div>
+
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd2uuRtr93wOw_-rTFxhcPiRp-8faQjKssGbl2COpm_j54W8g/viewform?embedded=true" 
+          width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">
+    Loading…
+  </iframe>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Questions or concerns about art? Please email me at <a href="mailto:parton.my.art@gmail.com">parton.my.art@gmail.com</a></p> 
+    <p>Questions or concerns about life? Please don't email me at <a href="mailto:parton.my.art@gmail.com">parton.my.art@gmail.com</a></p> 
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Website built and coded by yours truly. Still can't believe it actually works.</p>
+    <p>© 2025 Parton_My_Art — Web Designer (apparently?) All rights reserved.</p>
+  </footer>
+
+  <!-- LIGHTBOX SCRIPT -->
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.getAttribute("data-full");
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) lightbox.style.display = "none";
+    });
+
+    document.addEventListener("contextmenu", event => event.preventDefault());
+  </script>
+</body>
